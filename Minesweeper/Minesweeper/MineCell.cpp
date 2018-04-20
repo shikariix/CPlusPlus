@@ -6,17 +6,14 @@ MineCell::MineCell () = default;
 
 MineCell::~MineCell () = default;
 
-std::string MineCell::getType()
-{
+std::string MineCell::getType() {
 	return "MineCell";
 }
 
-std::string MineCell::displayCell()
-{
+std::string MineCell::displayCell() {
 	std::string s = "X";
 	return s;
 }
 
-void MineCell::setNumber(int mines)
-{
+void MineCell::setNumber(int mines) {
 }

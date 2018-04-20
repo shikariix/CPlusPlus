@@ -26,7 +26,7 @@ Grid::Grid () {
 Grid::Grid (int width, int height) {
 	this->width = width;
 	this->height = height;
-	srand (time (0));
+	srand (static_cast<int>(time(0)));
 	//Add cells to the grid
 	for (int i = 0; i < height; i++) {
 		std::vector<Cell*> tempVector;
@@ -48,8 +48,7 @@ Grid::Grid (int width, int height) {
 			//for every cell that is around the current one, check if it is a bomb
 			int neighbors = 0;
 			for (int k = i-1; k < i+2; k++) {
-				for (int l = j-1; l < j+2; l++)
-				{
+				for (int l = j-1; l < j+2; l++) {
 					if (k >= 0 && l >= 0 && k < height && l < width && cells[k][l]->getType() == "MineCell") {
 						neighbors++;
 					}
@@ -69,7 +68,11 @@ void Grid::display() {
 	}
 }
 
-Grid::~Grid()
-{
+Grid::~Grid() {
 	//delete all cells
+	for (int i = 0; i < height; i++) {
+		for (int j = 0; j < width; j++) {
+			delete cells[i][j];
+		}
+	}
 }

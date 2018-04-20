@@ -3,18 +3,14 @@
 EmptyCell::EmptyCell () {
 }
 
-
 EmptyCell::~EmptyCell () = default;
 
-std::string EmptyCell::getType()
-{
+std::string EmptyCell::getType() {
 	return "EmptyCell";
 }
 
-std::string EmptyCell::displayCell ()
-{
-	if (neighborMines == 0)
-	{
+std::string EmptyCell::displayCell () {
+	if (neighborMines == 0)	{
 		return " ";
 	} else {
 		std::string s = std::to_string(neighborMines);
@@ -22,7 +18,6 @@ std::string EmptyCell::displayCell ()
 	}
 }
 
-void EmptyCell::setNumber(int mines)
-{
+void EmptyCell::setNumber(int mines) {
 	neighborMines = mines;
 }
