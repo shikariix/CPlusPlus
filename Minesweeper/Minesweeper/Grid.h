@@ -8,6 +8,8 @@ public:
 	Grid ();
 	Grid (int width, int height);
 	void display ();
+	void makeCells ();
+	void checkNeighbors();
 	~Grid();
 
 private:

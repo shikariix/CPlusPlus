@@ -2,6 +2,8 @@
 #include "Grid.h"
 #include <string>
 
+#define _ITERATOR_DEBUG_LEVEL 1
+
 int main() {
 	
 	int width;
@@ -13,7 +15,7 @@ int main() {
 
 	Grid grid = Grid (width, height);
 
-	grid.display ();
+	grid.display();
 
 	char c;
 	std::cin >> c;
